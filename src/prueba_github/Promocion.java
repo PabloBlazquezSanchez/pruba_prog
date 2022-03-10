@@ -36,12 +36,5 @@ public class Promocion {
 	public void setRedesSociales(boolean redesSociales) {
 		this.redesSociales = redesSociales;
 	}
-
-	public Contenido getContenido() {
-		return contenido;
-	}
-
-	public void setContenido(Contenido contenido) {
-		this.contenido = contenido;
-	}
+	
 }
