@@ -34,6 +34,4 @@ public class EmpresaMarketing {
 	public void setPrecioCampañaPelicula(double precioCampañaPelicula) {
 		this.precioCampañaPelicula = precioCampañaPelicula;
 	}
-
-//PREGUNTAR CALCULARPRESUPUESTO 
 }
