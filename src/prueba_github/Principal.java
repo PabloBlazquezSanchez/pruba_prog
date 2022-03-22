@@ -14,6 +14,7 @@ public class Principal {
 		String titulo, descripcion, tipoContenido, productora, pais;
 		int año, duracion, nTemporadas, nCapitulos;
 		boolean tendencia;
+		Contenido contenido;
 		String line;
 		try (BufferedReader br = new BufferedReader(new FileReader(fichero))) {
 			while ((line = br.readLine()) != null) {
@@ -29,13 +30,13 @@ public class Principal {
 				if (tipoContenido.charAt(0)== 's') { 
 					nTemporadas = Integer.valueOf(split[6]);
 					nCapitulos = Integer.valueOf(split[7]);
-					Series serie = new Series(titulo, año, duracion, descripcion, tendencia, nTemporadas, nCapitulos);
+					contenido = new Series(titulo, año, duracion, descripcion, tendencia, nTemporadas, nCapitulos);
 				} 
 				// Informacion de una Pelicula
 				else { 
 					productora = split[6];
 					pais = split[7];
-					Contenido= new Pelicula(titulo, año, duracion, descripcion, tendencia, productora, pais);
+					contenido = new Pelicula(titulo, año, duracion, descripcion, tendencia, productora, pais);
 				}
 			}
 		} catch (IOException e) {

@@ -5,7 +5,7 @@ public class EmpresaMarketing {
 	private long telefono;
 	private double precioCampañaPelicula;
 
-	EmpresaMarketing(String nombre, long telefono, double precioCamapañaPelicula){
+	EmpresaMarketing(String nombre, long telefono, double precioCampañaPelicula){
 		this.nombre=nombre;
 		this.telefono=telefono;
 		this.precioCampañaPelicula=precioCampañaPelicula;
