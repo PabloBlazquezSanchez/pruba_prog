@@ -1,4 +1,4 @@
-package prueba_github;
+package laboratorio;
 
 public class Pelicula extends Contenido {
 	private String origen;

@@ -1,4 +1,4 @@
-package prueba_github;
+package laboratorio;
 
 import java.io.BufferedReader;
 import java.io.FileReader;

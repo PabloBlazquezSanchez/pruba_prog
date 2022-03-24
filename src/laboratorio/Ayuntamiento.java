@@ -1,4 +1,4 @@
-package prueba_github;
+package laboratorio;
 
 public class Ayuntamiento {
 	private String nombreContacto;

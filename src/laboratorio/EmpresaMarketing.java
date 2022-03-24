@@ -1,4 +1,4 @@
-package prueba_github;
+package laboratorio;
 
 public class EmpresaMarketing {
 	private String nombre;

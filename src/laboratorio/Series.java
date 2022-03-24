@@ -1,4 +1,4 @@
-package prueba_github;
+package laboratorio;
 
 public class Series extends Contenido {
 	private int temporadas, capitulos;

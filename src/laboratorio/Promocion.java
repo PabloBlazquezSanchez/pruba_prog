@@ -1,4 +1,4 @@
-package prueba_github;
+package laboratorio;
 
 public class Promocion {
 	private long idPromocion;

@@ -1,4 +1,4 @@
-package prueba_github;
+package laboratorio;
 
 public abstract class Contenido {
 	private String titulo;
