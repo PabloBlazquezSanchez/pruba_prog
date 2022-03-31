@@ -12,6 +12,17 @@ public class Promocion {
 		this.redesSociales = redesSociales;
 		this.contenido = contenido;
 	}
+	
+
+	public Contenido getContenido() {
+		return contenido;
+	}
+
+
+	public void setContenido(Contenido contenido) {
+		this.contenido = contenido;
+	}
+
 
 	public long getIdPromocion() {
 		return idPromocion;
