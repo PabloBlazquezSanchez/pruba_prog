@@ -6,7 +6,7 @@ public class Promocion {
 	private boolean redesSociales;
 	private Contenido contenido;
 
-	public Promocion(long idPromocion, Contenido contenido, boolean cartel, boolean redesScoiales) {
+	public Promocion(long idPromocion, Contenido contenido, boolean cartel, boolean redesSociales) {
 		this.idPromocion = idPromocion;
 		this.cartel = cartel;
 		this.redesSociales = redesSociales;
