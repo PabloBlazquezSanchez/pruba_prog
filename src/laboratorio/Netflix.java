@@ -39,7 +39,6 @@ public class Netflix {
 				promociones.add(p);
 			}
 		}
-
 	}
 
 	public void mostrarTodasPromociones() {
@@ -48,37 +47,41 @@ public class Netflix {
 		}
 	}
 
-	public void precioPromocion(Promocion promociones) {
-		double precio=0;
-		if(promociones.getContenido() instanceof Pelicula) {
-			if(promociones.isCartel()==true) {
-				precio+=2000;
+	public double precioPromocion(Promocion promociones) {
+		double precio = 0;
+		if (promociones.getContenido() instanceof Pelicula) {
+			if (promociones.isCartel()) {
+				precio += 2000;
 			}
-			if(promociones.isRedesSociales()==true) {
-				precio+=40000;
+			if (promociones.isRedesSociales()) {
+				precio += 40000;
 			}
-			if(promociones.getContenido().isTendencias()==true) {
-				precio*=1.07;
-			}}
-			
-			if(promociones.getContenido() instanceof Series) {
-				Series serie= (Series) promociones.getContenido();
-
-				if(promociones.isCartel()==true) {
-					precio+=(300* serie.getTemporadas());
-				}
-				if(promociones.isRedesSociales()==true) {
-					precio+=(700* serie.getCapitulos());
-				}
-				if(promociones.getContenido().isTendencias()==true) {
-					precio*=1.06;
-				}
+			if (promociones.getContenido().isTendencias()) {
+				precio *= 1.07;
+			}
 		}
-		
+
+		if (promociones.getContenido() instanceof Series) {
+			Series serie = (Series) promociones.getContenido();
+
+				if (promociones.isCartel()) {
+					precio += (300 * serie.getTemporadas());
+				}
+				if (promociones.isRedesSociales()) {
+					precio += (700 * serie.getCapitulos());
+				}
+				if (promociones.getContenido().isTendencias()) {
+					precio *= 1.06;
+				}
+			}
+		return precio;
 	}
 
 	public void calcularPrecioPromocionesRealizadas() {
+		double promocionestotales=0;
 		for (int i = promociones.size() - 1; i < 0; i--) {
+			promocionestotales+=precioPromocion(promociones.get(i));
 		}
+		System.out.println("El coste de todas las promociones es" +promocionestotales);
 	}
 }
