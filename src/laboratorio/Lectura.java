@@ -24,7 +24,7 @@ public class Lectura {
 					+"2. Realizar una promoción de una película o una serie.\n"
 					+"3. Mostrar todas las promociones realizadas.\n"
 					+"4. Mostrar coste de todas las promociones realizadas.\n"
-					+"5. Calcular coste de promoción de una película o serie en concreto."
+					+"5. Calcular coste de promoción de una película o serie en concreto.\n"
 					+"6. Calcular el coste de una campaña masiva de marketing.\n"
 					+"7. Calcular la subvención que se obtiene a partir de las películas o series.\n"
 					+"Escriba el número de la opción que desea realizar: ");
@@ -36,6 +36,7 @@ public class Lectura {
 			case 2:
 				break;
 			case 3:
+				n.calcularPrecioPromocionesRealizadas();
 				break;
 			case 4:
 				break;

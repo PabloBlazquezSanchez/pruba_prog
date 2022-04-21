@@ -9,27 +9,34 @@ public class Series extends Contenido {
 		this.temporadas = temporadas;
 		this.capitulos = capitulos;
 	}
+
 	public double calcularPrecioPromocion() {
 		return 0;
 	}
+
 	@Override
 	public String toString() {
-		return "Series [temporadas=" + temporadas + ", capitulos=" + capitulos + ", getTitulo()=" + getTitulo()
-				+ ", getFechaestreno()=" + getFechaestreno() + ", getDuracion()=" + getDuracion() + ", getSinopsis()="
-				+ getSinopsis() + ", isTendencias()=" + isTendencias() + ", getClass()=" + getClass() + ", hashCode()="
-				+ hashCode() + ", toString()=" + super.toString() + "]";
-	}
+		String Tendencias= " ";
+		if(isTendencias()) {Tendencias= "Sí";}else{Tendencias= "No";};
+		return "Tipo de contenido: Serie | Temporadas:" + temporadas + " | Capítulos:" + capitulos + " | Título:" + getTitulo()
+				+ " | Fecha de estreno:" + getFechaestreno() + " | Duración:" + getDuracion() + " minutos | Sinopsis: "
+				+ getSinopsis() + " | Tendencias: " +Tendencias;}
+	
+
 	public int getTemporadas() {
 		return temporadas;
 	}
+
 	public void setTemporadas(int temporadas) {
 		this.temporadas = temporadas;
 	}
+
 	public int getCapitulos() {
 		return capitulos;
 	}
+
 	public void setCapitulos(int capitulos) {
 		this.capitulos = capitulos;
 	}
-	
+
 }
