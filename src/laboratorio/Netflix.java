@@ -50,6 +50,7 @@ public class Netflix implements utils.Constantes {
 	}
 
 	public void mostrarTodasPromociones() {
+		if (promociones.isEmpty()) {System.out.println("No hay creada ninguna promoción.\n");}
 		for (Promocion pr : promociones) {
 			System.out.println(pr.toString());
 		}
