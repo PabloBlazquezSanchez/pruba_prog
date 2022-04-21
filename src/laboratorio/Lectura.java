@@ -34,11 +34,13 @@ public class Lectura {
 				mostrarContenido();
 				break;
 			case 2:
+				n.crearPromocion();
 				break;
 			case 3:
-				n.calcularPrecioPromocionesRealizadas();
+				n.mostrarTodasPromociones();
 				break;
 			case 4:
+				n.calcularPrecioPromocionesRealizadas();
 				break;
 			case 5:
 				break;
