@@ -12,6 +12,13 @@ public class Series extends Contenido {
 	public double calcularPrecioPromocion() {
 		return 0;
 	}
+	@Override
+	public String toString() {
+		return "Series [temporadas=" + temporadas + ", capitulos=" + capitulos + ", getTitulo()=" + getTitulo()
+				+ ", getFechaestreno()=" + getFechaestreno() + ", getDuracion()=" + getDuracion() + ", getSinopsis()="
+				+ getSinopsis() + ", isTendencias()=" + isTendencias() + ", getClass()=" + getClass() + ", hashCode()="
+				+ hashCode() + ", toString()=" + super.toString() + "]";
+	}
 	public int getTemporadas() {
 		return temporadas;
 	}

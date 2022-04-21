@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Scanner;
 import exceptions.ContenidoNoEncontradoException;
 
-public class Netflix {
+public class Netflix implements utils.Constantes{
 	private Scanner leer = new Scanner(System.in);
 	private List<Contenido> contenidos = new ArrayList<Contenido>();
 	private List<Promocion> promociones = new ArrayList<Promocion>();
@@ -34,6 +34,12 @@ public class Netflix {
 		boolean cartel = leer.next().toLowerCase().equals("s") ? true : false;
 		System.out.println("Escribe el título de la serie o película de la que quieres crear promoción: ");
 		String nombre = leer.next();
+		// Excepcion
+		try {
+			tituloExisteEnContenido(nombre);
+		} catch (ContenidoNoEncontradoException exc) {
+			System.out.println(exc.getMessage());
+		}
 		for (Contenido c : contenidos) {
 			if (c.getTitulo() == nombre) {
 				Promocion p = new Promocion(promociones.size(), c, cartel, redesSociales);
@@ -99,6 +105,15 @@ public class Netflix {
 		return contenido;
 	}
 
-	public void mostrarcosteTotalDePromociones() {
+//	public void mostrarcosteTotalDePromociones() {
+//	}
+	private void explorarprecioseries() {
+		int value = 0;
+		for(Contenido c:contenidos) {
+			if(c instanceof Series) {
+				Series serie = (Series) c;
+				value += serie.getCapitulos()*serie.getTemporadas();
+			}
+		}
 	}
 }
