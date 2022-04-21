@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Scanner;
+import exceptions.ContenidoNoEncontradoException;
 
 public class Netflix {
 	private Scanner leer = new Scanner(System.in);
