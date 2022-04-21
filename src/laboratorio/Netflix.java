@@ -58,27 +58,27 @@ public class Netflix implements utils.Constantes{
 		double precio = 0;
 		if (promociones.getContenido() instanceof Pelicula) {
 			if (promociones.isCartel()) {
-				precio += 2000;
+				precio += Precio_Cartel_Peliculas;
 			}
 			if (promociones.isRedesSociales()) {
-				precio += 40000;
+				precio += Precio_RRSS_Peliculas;
 			}
 			if (promociones.getContenido().isTendencias()) {
-				precio *= 1.07;
+				precio *= Aumento_Tendencias_Peliculas;
 			}
 		}
 
 		if (promociones.getContenido() instanceof Series) {
 			Series serie = (Series) promociones.getContenido();
 
-			if (promociones.isCartel()) {
-				precio += (300 * serie.getTemporadas());
-			}
 			if (promociones.isRedesSociales()) {
-				precio += (700 * serie.getCapitulos());
+				precio += (Precio_RRSS_Series * serie.getTemporadas());
+			}
+			if (promociones.isCartel()) {
+				precio += (Precio_Cartel_Series * serie.getCapitulos());
 			}
 			if (promociones.getContenido().isTendencias()) {
-				precio *= 1.06;
+				precio *= Aumento_Tendencias_Series;
 			}
 		}
 		return precio;
@@ -107,13 +107,5 @@ public class Netflix implements utils.Constantes{
 
 //	public void mostrarcosteTotalDePromociones() {
 //	}
-	private void explorarprecioseries() {
-		int value = 0;
-		for(Contenido c:contenidos) {
-			if(c instanceof Series) {
-				Series serie = (Series) c;
-				value += serie.getCapitulos()*serie.getTemporadas();
-			}
-		}
-	}
+	
 }
