@@ -23,8 +23,10 @@ public class Netflix implements utils.Constantes{
 
 	public void mostrarContenido() {
 		for (Contenido c : contenidos) {
-			System.out.println(c.toString());
+			System.out.println();
+				System.out.println(c.toString());
 		}
+		System.out.println();
 	}
 
 	public void crearPromocion() {
