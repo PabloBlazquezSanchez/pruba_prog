@@ -17,8 +17,8 @@ public class Series extends Contenido {
 	@Override
 	public String toString() {
 		String Tendencias = (isTendencias()) ? "Sí" : "No";
-		return "Tipo de contenido: Serie | Temporadas:" + temporadas + " | Capítulos:" + capitulos + " | Título:"
-				+ getTitulo() + " | Fecha de estreno:" + getFechaestreno() + " | Duración:" + getDuracion()
+		return "Tipo de contenido: Serie | Temporadas: " + temporadas + " | Capítulos: " + capitulos + " | Título: "
+				+ getTitulo() + " | Fecha de estreno: " + getFechaestreno() + " | Duración: " + getDuracion()
 				+ " minutos | Sinopsis: " + getSinopsis() + " | Tendencias: " + Tendencias;
 	}
 

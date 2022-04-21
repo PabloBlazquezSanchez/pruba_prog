@@ -88,10 +88,11 @@ public class Netflix implements utils.Constantes {
 
 	public void calcularPrecioPromocionesRealizadas() {
 		double promocionestotales = 0;
-		for (int i = promociones.size() - 1; i < 0; i--) {
+		//int i = promociones.size() - 1; i < 0; i--
+		for (int i = 0; i < promociones.size(); i++) {
 			promocionestotales += precioPromocion(promociones.get(i));
 		}
-		System.out.println("El coste de todas las promociones es" + promocionestotales + "€");
+		System.out.println("El coste de todas las promociones es " + promocionestotales + "€");
 	}
 
 	private Contenido tituloExisteEnContenido(String titulo) throws ContenidoNoEncontradoException {
