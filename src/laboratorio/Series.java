@@ -16,12 +16,11 @@ public class Series extends Contenido {
 
 	@Override
 	public String toString() {
-		String Tendencias= " ";
-		if(isTendencias()) {Tendencias= "Sí";}else{Tendencias= "No";};
-		return "Tipo de contenido: Serie | Temporadas:" + temporadas + " | Capítulos:" + capitulos + " | Título:" + getTitulo()
-				+ " | Fecha de estreno:" + getFechaestreno() + " | Duración:" + getDuracion() + " minutos | Sinopsis: "
-				+ getSinopsis() + " | Tendencias: " +Tendencias;}
-	
+		String Tendencias = (isTendencias()) ? "Sí" : "No";
+		return "Tipo de contenido: Serie | Temporadas:" + temporadas + " | Capítulos:" + capitulos + " | Título:"
+				+ getTitulo() + " | Fecha de estreno:" + getFechaestreno() + " | Duración:" + getDuracion()
+				+ " minutos | Sinopsis: " + getSinopsis() + " | Tendencias: " + Tendencias;
+	}
 
 	public int getTemporadas() {
 		return temporadas;

@@ -6,23 +6,28 @@ public class Promocion {
 	private boolean redesSociales;
 	private Contenido contenido;
 
+	@Override
+	public String toString() {
+		String cartel1 = (cartel) ? "Sí" : "No";
+		String redesSociales1 = (redesSociales) ? "Sí" : "No";
+		return "Título del contenido: " + contenido.getTitulo() + " | ID de Promocion: " + idPromocion
+				+ " | Uso de cartel: " + cartel1 + " | Uso de RRSS: " + redesSociales1;
+	}
+
 	public Promocion(long idPromocion, Contenido contenido, boolean cartel, boolean redesSociales) {
 		this.idPromocion = idPromocion;
 		this.cartel = cartel;
 		this.redesSociales = redesSociales;
 		this.contenido = contenido;
 	}
-	
 
 	public Contenido getContenido() {
 		return contenido;
 	}
 
-
 	public void setContenido(Contenido contenido) {
 		this.contenido = contenido;
 	}
-
 
 	public long getIdPromocion() {
 		return idPromocion;
@@ -47,5 +52,5 @@ public class Promocion {
 	public void setRedesSociales(boolean redesSociales) {
 		this.redesSociales = redesSociales;
 	}
-	
+
 }

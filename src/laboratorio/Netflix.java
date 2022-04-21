@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Scanner;
 import exceptions.ContenidoNoEncontradoException;
 
-public class Netflix implements utils.Constantes{
+public class Netflix implements utils.Constantes {
 	private Scanner leer = new Scanner(System.in);
 	private List<Contenido> contenidos = new ArrayList<Contenido>();
 	private List<Promocion> promociones = new ArrayList<Promocion>();
@@ -24,30 +24,29 @@ public class Netflix implements utils.Constantes{
 	public void mostrarContenido() {
 		for (Contenido c : contenidos) {
 			System.out.println();
-				System.out.println(c.toString());
+			System.out.println(c.toString());
 		}
 		System.out.println();
 	}
 
 	public void crearPromocion() {
+		Contenido c;
 		System.out.println("Escribe si la promoción es a través de redes sociales (s/n): ");
-		boolean redesSociales = leer.next().equals("s") ? true : false;
+		boolean redesSociales = leer.nextLine().equals("s") ? true : false;
 		System.out.println("Escribe si la promoción es a través de un cartel (s/n): ");
-		boolean cartel = leer.next().toLowerCase().equals("s") ? true : false;
+		boolean cartel = leer.nextLine().toLowerCase().equals("s") ? true : false;
 		System.out.println("Escribe el título de la serie o película de la que quieres crear promoción: ");
-		String nombre = leer.next();
+		String nombre = leer.nextLine();
+
 		// Excepcion
 		try {
-			tituloExisteEnContenido(nombre);
+			c = tituloExisteEnContenido(nombre);
+			Promocion p = new Promocion(promociones.size(), c, cartel, redesSociales);
+			promociones.add(p);
 		} catch (ContenidoNoEncontradoException exc) {
 			System.out.println(exc.getMessage());
 		}
-		for (Contenido c : contenidos) {
-			if (c.getTitulo() == nombre) {
-				Promocion p = new Promocion(promociones.size(), c, cartel, redesSociales);
-				promociones.add(p);
-			}
-		}
+
 	}
 
 	public void mostrarTodasPromociones() {
@@ -109,5 +108,5 @@ public class Netflix implements utils.Constantes{
 
 //	public void mostrarcosteTotalDePromociones() {
 //	}
-	
+
 }

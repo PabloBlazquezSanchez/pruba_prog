@@ -13,11 +13,10 @@ public class Pelicula extends Contenido {
 
 	@Override
 	public String toString() {
-		String Tendencias= " ";
-		if(isTendencias()) {Tendencias= "Sí";}else{Tendencias= "No";};
-		return "Tipo de contenido: Película | Origen:" + origen + " | Productora:" + productora + " | Título:" + getTitulo()
-				+ " | Fecha de estreno:" + getFechaestreno() + " | Duración:" + getDuracion() + " minutos | Sinopsis: "
-				+ getSinopsis() + " | Tendencias: " + Tendencias;
+		String Tendencias = (isTendencias()) ? "Sí" : "No";
+		return "Tipo de contenido: Película | Origen:" + origen + " | Productora:" + productora + " | Título:"
+				+ getTitulo() + " | Fecha de estreno:" + getFechaestreno() + " | Duración:" + getDuracion()
+				+ " minutos | Sinopsis: " + getSinopsis() + " | Tendencias: " + Tendencias;
 	}
 
 	public String getOrigen() {
