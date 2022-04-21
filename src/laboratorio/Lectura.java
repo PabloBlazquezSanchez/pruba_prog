@@ -63,7 +63,7 @@ public class Lectura {
 		try {
 			numero = lectura.nextInt();
 		}catch(InputMismatchException ime) {
-			System.out.println("Sólo puede escribir números. Inténtalo de nuevo: ");
+			System.out.println("Sólo puede escribir números. Inténtelo de nuevo: ");
 			numero = filtrarEscritura();
 		}
 		return numero;

@@ -64,24 +64,40 @@ public class Netflix {
 		if (promociones.getContenido() instanceof Series) {
 			Series serie = (Series) promociones.getContenido();
 
-				if (promociones.isCartel()) {
-					precio += (300 * serie.getTemporadas());
-				}
-				if (promociones.isRedesSociales()) {
-					precio += (700 * serie.getCapitulos());
-				}
-				if (promociones.getContenido().isTendencias()) {
-					precio *= 1.06;
-				}
+			if (promociones.isCartel()) {
+				precio += (300 * serie.getTemporadas());
 			}
+			if (promociones.isRedesSociales()) {
+				precio += (700 * serie.getCapitulos());
+			}
+			if (promociones.getContenido().isTendencias()) {
+				precio *= 1.06;
+			}
+		}
 		return precio;
 	}
 
 	public void calcularPrecioPromocionesRealizadas() {
-		double promocionestotales=0;
+		double promocionestotales = 0;
 		for (int i = promociones.size() - 1; i < 0; i--) {
-			promocionestotales+=precioPromocion(promociones.get(i));
+			promocionestotales += precioPromocion(promociones.get(i));
 		}
-		System.out.println("El coste de todas las promociones es" +promocionestotales);
+		System.out.println("El coste de todas las promociones es" + promocionestotales + "€");
+	}
+
+	private Contenido tituloExisteEnContenido(String titulo) throws ContenidoNoEncontradoException {
+		Contenido contenido = null;
+		for (Contenido c : contenidos) {
+			if (c.getTitulo().equals(titulo)) {
+				contenido = c;
+			}
+		}
+		if (contenido == null) {
+			throw new ContenidoNoEncontradoException("Título de contenido no encontrado");
+		}
+		return contenido;
+	}
+
+	public void mostrarcosteTotalDePromociones() {
 	}
 }
