@@ -7,31 +7,30 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Lectura {
-
-	static Netflix n = new Netflix (); 
+	static Netflix n = new Netflix();
 
 	public static void main(String[] args) throws IOException {
 		leerFichero2("Contenido.csv");
 		mostrarMenu();
-		
+
 	}
-	
+
 	public static void mostrarMenu() {
-		int opcion=0;
+		int opcion = 0;
 		// TODO Auto-generated method stub
 		do {
-			System.out.println("Menú: \n"+"1. Mostrar toda la información del contenido de la plataforma.\n"
-					+"2. Realizar una promoción de una película o una serie.\n"
-					+"3. Mostrar todas las promociones realizadas.\n"
-					+"4. Mostrar coste de todas las promociones realizadas.\n"
-					+"5. Calcular coste de promoción de una película o serie en concreto.\n"
-					+"6. Calcular el coste de una campaña masiva de marketing.\n"
-					+"7. Calcular la subvención que se obtiene a partir de las películas o series.\n"
-					+"Escriba el número de la opción que desea realizar: ");
+			System.out.println("Menú: \n" + "1. Mostrar toda la información del contenido de la plataforma.\n"
+					+ "2. Realizar una promoción de una película o una serie.\n"
+					+ "3. Mostrar todas las promociones realizadas.\n"
+					+ "4. Mostrar coste de todas las promociones realizadas.\n"
+					+ "5. Calcular coste de promoción de una película o serie en concreto.\n"
+					+ "6. Calcular el coste de una campaña masiva de marketing.\n"
+					+ "7. Calcular la subvención que se obtiene a partir de las películas o series.\n"
+					+ "Escriba el número de la opción que desea realizar: ");
 			opcion = filtrarEscritura();
-			switch(opcion) {
+			switch (opcion) {
 			case 1:
-				mostrarContenido();
+				n.mostrarContenido();
 				break;
 			case 2:
 				n.crearPromocion();
@@ -43,6 +42,7 @@ public class Lectura {
 				n.calcularPrecioPromocionesRealizadas();
 				break;
 			case 5:
+				costePromocionconreta();
 				break;
 			case 6:
 				break;
@@ -55,8 +55,16 @@ public class Lectura {
 				System.out.println("Error. Vuelva a escribir la opción otra vez.\n");
 				break;
 			}
-		}while(opcion !=8);
-		
+		} while (opcion != 8);
+
+	}
+
+	private static void costePromocionconreta() {
+		String titulo;
+		Scanner lectura = new Scanner(System.in);
+		System.out.println("Escriba el título de la película o serie de la que desea saber el coste de la promoción:");
+		titulo = lectura.nextLine();
+		n.calcularPreciounaPromocion(titulo);
 	}
 
 	public static int filtrarEscritura() {
@@ -65,17 +73,13 @@ public class Lectura {
 		Scanner lectura = new Scanner(System.in);
 		try {
 			numero = lectura.nextInt();
-		}catch(InputMismatchException ime) {
+		} catch (InputMismatchException ime) {
 			System.out.println("Sólo puede escribir números. Inténtelo de nuevo: ");
 			numero = filtrarEscritura();
 		}
 		return numero;
 	}
 
-	private static void mostrarContenido() {
-		n.mostrarContenido();
-		
-	}
 
 	private static void leerFichero2(String fichero) throws IOException {
 		String titulo, descripcion, tipoContenido, productora, pais;
@@ -94,14 +98,14 @@ public class Lectura {
 				tendencia = Boolean.valueOf(split[5]);
 
 				// Informacion de una Pelicula
-				if (tipoContenido.charAt(0)== 's') { 
+				if (tipoContenido.charAt(0) == 's') {
 					nTemporadas = Integer.valueOf(split[6]);
 					nCapitulos = Integer.valueOf(split[7]);
 					contenido = new Series(titulo, año, duracion, descripcion, tendencia, nTemporadas, nCapitulos);
 					n.addContenido(contenido);
-				} 
+				}
 				// Informacion de una Pelicula
-				else { 
+				else {
 					productora = split[6];
 					pais = split[7];
 					contenido = new Pelicula(titulo, año, duracion, descripcion, tendencia, productora, pais);

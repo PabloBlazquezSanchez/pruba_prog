@@ -50,7 +50,9 @@ public class Netflix implements utils.Constantes {
 	}
 
 	public void mostrarTodasPromociones() {
-		if (promociones.isEmpty()) {System.out.println("No hay creada ninguna promoción.\n");}
+		if (promociones.isEmpty()) {
+			System.out.println("No hay creada ninguna promoción.\n");
+		}
 		for (Promocion pr : promociones) {
 			System.out.println(pr.toString());
 		}
@@ -88,11 +90,25 @@ public class Netflix implements utils.Constantes {
 
 	public void calcularPrecioPromocionesRealizadas() {
 		double promocionestotales = 0;
-		//int i = promociones.size() - 1; i < 0; i--
+		// int i = promociones.size() - 1; i < 0; i--
 		for (int i = 0; i < promociones.size(); i++) {
 			promocionestotales += precioPromocion(promociones.get(i));
 		}
 		System.out.println("El coste de todas las promociones es " + promocionestotales + "€");
+	}
+
+	public void calcularPreciounaPromocion(String titulo) {
+		boolean verificacion = true;
+		for (Promocion pr : promociones) {
+			if (pr.getContenido().getTitulo().equals(titulo)) {
+				System.out.println("El coste de la promoción de " + titulo + " es " + precioPromocion(pr) + "€");
+				verificacion = false;
+			}
+			
+		}
+		if (verificacion) {
+			System.out.println("No hay ninguna promoción asociada a este título\n");
+		}
 	}
 
 	private Contenido tituloExisteEnContenido(String titulo) throws ContenidoNoEncontradoException {
