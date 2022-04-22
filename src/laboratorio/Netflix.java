@@ -123,6 +123,28 @@ public class Netflix implements utils.Constantes {
 		precio += (contador*Precio_Campaña_Marketing);
 		System.out.println("El precio de la campaña de Márketing masiva es de "+precio+"€");
 	}
+	public void calcularSubvenciones(String tipo) {
+		String tipo_serie ="serie";
+		String tipo_pelicula ="pelicula";
+		double precio = 0;
+		for(Promocion pr : promociones) {
+			if(tipo_pelicula.equals(tipo) && pr.getContenido() instanceof Pelicula && pr.isCartel()) {
+				if(pr.getContenido().isTendencias()) {
+					precio+=Subvencion_Pelicula_Tendencia;
+				}else {
+					precio+=Subvencion_Pelicula_NTendencia;
+				}
+			}
+			if(tipo_serie.equals(tipo) && pr.getContenido() instanceof Series && pr.isCartel()) {
+				if(pr.getContenido().isTendencias()) {
+					precio+=Subvencion_Serie_Tendencia;
+				}else {
+					precio+=Subvencion_Serie_NTendencia;
+				}
+			}
+		}
+		System.out.println("Las subvenciones totales que reciben del ayuntamiento son "+precio+"€");
+	}
 
 	private Contenido tituloExisteEnContenido(String titulo) throws ContenidoNoEncontradoException {
 		Contenido contenido = null;

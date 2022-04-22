@@ -48,6 +48,7 @@ public class Lectura {
 				n.campañaMarketingMasiva();
 				break;
 			case 7:
+				calculoSubvenciones();
 				break;
 			case 8:
 				System.out.println("Programa finalizado.");
@@ -66,6 +67,15 @@ public class Lectura {
 		System.out.println("Escriba el título de la película o serie de la que desea saber el coste de la promoción:");
 		titulo = lectura.nextLine();
 		n.calcularPreciounaPromocion(titulo);
+	}
+	
+	private static void calculoSubvenciones() {
+		String tipo;
+		Scanner lectura = new Scanner(System.in);
+		System.out.println("Si desea calcular las subvenciones obtenidas a partir de las series escriba \"serie\" y \n"
+				+ "si desea calcular las subvenciones obtenidas a partie de las películas escriba \"pelicula\".");
+		tipo = lectura.nextLine();
+		n.calcularSubvenciones(tipo);
 	}
 
 	public static int filtrarEscritura() {
