@@ -110,6 +110,19 @@ public class Netflix implements utils.Constantes {
 			System.out.println("No hay ninguna promoción asociada a este título\n");
 		}
 	}
+	public void campañaMarketingMasiva() {
+		int contador=0;
+		double precio = 0;
+		for (Contenido c : contenidos) {
+			if(c instanceof Pelicula) {
+				Promocion promoPeli = new Promocion(contador, c, false, true);
+				precio+=precioPromocion(promoPeli);
+				contador++;
+			}
+		}
+		precio += (contador*Precio_Campaña_Marketing);
+		System.out.println("El precio de la campaña de Márketing masiva es de "+precio+"€");
+	}
 
 	private Contenido tituloExisteEnContenido(String titulo) throws ContenidoNoEncontradoException {
 		Contenido contenido = null;

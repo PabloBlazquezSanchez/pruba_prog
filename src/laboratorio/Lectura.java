@@ -45,6 +45,7 @@ public class Lectura {
 				costePromocionconreta();
 				break;
 			case 6:
+				n.campañaMarketingMasiva();
 				break;
 			case 7:
 				break;
