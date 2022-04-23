@@ -68,13 +68,23 @@ public class Lectura {
 		titulo = lectura.nextLine();
 		n.calcularPreciounaPromocion(titulo);
 	}
-	
+
 	private static void calculoSubvenciones() {
 		String tipo;
 		Scanner lectura = new Scanner(System.in);
-		System.out.println("Si desea calcular las subvenciones obtenidas a partir de las series escriba \"serie\" y \n"
-				+ "si desea calcular las subvenciones obtenidas a partie de las películas escriba \"pelicula\".");
-		tipo = lectura.nextLine();
+		boolean comprobacion = true;
+		do {
+			System.out.println(
+					"Si desea calcular las subvenciones obtenidas a partir de las series escriba \"serie\" y si lo desea para las películas escriba \"pelicula\".");
+			tipo = lectura.nextLine();
+			if (tipo.equals("serie") || tipo.equals("pelicula")) {
+				comprobacion = false;
+			}
+			if (comprobacion) {
+				System.out.println("Error. Vuelva a escribir su respuesta.");
+			}
+		} while (comprobacion);
+
 		n.calcularSubvenciones(tipo);
 	}
 
@@ -90,7 +100,6 @@ public class Lectura {
 		}
 		return numero;
 	}
-
 
 	private static void leerFichero2(String fichero) throws IOException {
 		String titulo, descripcion, tipoContenido, productora, pais;

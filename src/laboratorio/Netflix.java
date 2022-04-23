@@ -121,7 +121,7 @@ public class Netflix implements utils.Constantes {
 			}
 		}
 		precio += (contador*Precio_Campaña_Marketing);
-		System.out.println("El precio de la campaña de Márketing masiva es de "+precio+"€");
+		System.out.println("El precio de la campaña de marketing masiva es de "+precio+"€");
 	}
 	public void calcularSubvenciones(String tipo) {
 		String tipo_serie ="serie";
