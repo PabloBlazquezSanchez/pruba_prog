@@ -1,6 +1,6 @@
 package laboratorio;
 
-public class EmpresaMarketing implements utils.Constantes {
+public class EmpresaMarketing {
 	private String nombre;
 	private long telefono;
 	private double precioCampañaMarketing;
@@ -37,9 +37,7 @@ public class EmpresaMarketing implements utils.Constantes {
 
 	@Override
 	public String toString() {
-		return "EmpresaMarketing [nombre=" + nombre + ", telefono=" + telefono + ", precioCampañaMarketing="
-				+ precioCampañaMarketing + ", getNombre()=" +getNombre() + ", getTelefono()=" + getTelefono()
-				+ ", getPrecioCampañaMarketing()=" + getPrecioCampañaMarketing() + "]";
+		return "Nombre de empresa: " + getNombre() + "| Teléfono:" + getTelefono();
 	}
 	
 	
