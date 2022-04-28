@@ -26,6 +26,7 @@ public class Lectura {
 					+ "5. Calcular coste de promoción de una película o serie en concreto.\n"
 					+ "6. Calcular el coste de una campaña masiva de marketing.\n"
 					+ "7. Calcular la subvención que se obtiene a partir de las películas o series.\n"
+					+ "8. Finalizar el programa.\n"
 					+ "Escriba el número de la opción que desea realizar: ");
 			opcion = (int) filtrarEscritura();
 			switch (opcion) {

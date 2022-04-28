@@ -8,6 +8,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Scanner;
 import exceptions.ContenidoNoEncontradoException;
+import exceptions.PrecioSuperiorException;
 
 public class Netflix implements utils.Constantes {
 	private Scanner leer = new Scanner(System.in);
@@ -43,15 +44,18 @@ public class Netflix implements utils.Constantes {
 		try {
 			c = tituloExisteEnContenido(nombre);
 			p = new Promocion(promociones.size(), c, cartel, redesSociales);
+			if(p.getContenido() instanceof Series) {
+				comprobarPrecioPromocion(p);
+			}
 			System.out.println("Promoción realizada correctamente. ID asociado a esta promoción: "+promociones.size());
-			//promociones.add(p);
+			promociones.add(p);
 		} catch (ContenidoNoEncontradoException exc) {
 			System.out.println(exc.getMessage());
 			
-		}//catch (PrecioSuperiorException exc) {
-//			System.out.println(exc.getMessage());
-//		}
-		promociones.add(p);
+		}catch (PrecioSuperiorException exc) {
+			System.out.println(exc.getMessage());
+		}
+		
 
 	}
 
@@ -163,6 +167,15 @@ public class Netflix implements utils.Constantes {
 			throw new ContenidoNoEncontradoException("Título de contenido no encontrado.\n");
 		}
 		return contenido;
+	}
+	
+	private void comprobarPrecioPromocion(Promocion p) throws PrecioSuperiorException {
+		// TODO Auto-generated method stub
+		double precio=0;
+		precio+=precioPromocion(p);
+		if(precio>12000) {
+			throw new PrecioSuperiorException("El precio de la promoción de esta serie supera los 12000 €, por lo que no se puede crear dicha promoción.");
+		}
 	}
 
 //	public void mostrarcosteTotalDePromociones() {
