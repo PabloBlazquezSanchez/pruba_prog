@@ -27,7 +27,7 @@ public class Lectura {
 					+ "6. Calcular el coste de una campaña masiva de marketing.\n"
 					+ "7. Calcular la subvención que se obtiene a partir de las películas o series.\n"
 					+ "Escriba el número de la opción que desea realizar: ");
-			opcion = filtrarEscritura();
+			opcion = (int) filtrarEscritura();
 			switch (opcion) {
 			case 1:
 				n.mostrarContenido();
@@ -62,11 +62,11 @@ public class Lectura {
 	}
 
 	private static void costePromocionconreta() {
-		String titulo;
+		long id;
 		Scanner lectura = new Scanner(System.in);
-		System.out.println("Escriba el título de la película o serie de la que desea saber el coste de la promoción:");
-		titulo = lectura.nextLine();
-		n.calcularPreciounaPromocion(titulo);
+		System.out.println("Escriba el ID de la promoción realizada a una película o serie para saber el coste de esta:");
+		id = filtrarEscritura();
+		n.calcularPreciounaPromocion(id);
 	}
 
 	private static void calculoSubvenciones() {
@@ -87,12 +87,11 @@ public class Lectura {
 		n.calcularSubvenciones(tipo);
 	}
 
-	public static int filtrarEscritura() {
-		// TODO Implementar despues un error de escritura
-		int numero = 0;
+	public static long filtrarEscritura() {
+		long numero = 0;
 		Scanner lectura = new Scanner(System.in);
 		try {
-			numero = lectura.nextInt();
+			numero = lectura.nextLong();
 		} catch (InputMismatchException ime) {
 			System.out.println("Sólo puede escribir números. Inténtelo de nuevo: ");
 			numero = filtrarEscritura();
