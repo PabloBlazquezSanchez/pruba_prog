@@ -74,8 +74,7 @@ public class Lectura {
 		Scanner lectura = new Scanner(System.in);
 		boolean comprobacion = true;
 		do {
-			System.out.println(
-					"Si desea calcular las subvenciones obtenidas a partir de las series escriba \"serie\" y si lo desea para las películas escriba \"pelicula\".");
+			System.out.println("Si desea calcular las subvenciones obtenidas a partir de las series escriba \"serie\" y si lo desea para las películas escriba \"pelicula\".");
 			tipo = lectura.nextLine();
 			if (tipo.toLowerCase().equals("serie") || tipo.toLowerCase().equals("pelicula")) {
 				comprobacion = false;

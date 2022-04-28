@@ -1,14 +1,14 @@
 package laboratorio;
 
-public class EmpresaMarketing {
+public class EmpresaMarketing implements utils.Constantes {
 	private String nombre;
 	private long telefono;
-	private double precioCampañaPelicula;
+	private double precioCampañaMarketing;
 
-	EmpresaMarketing(String nombre, long telefono, double precioCampañaPelicula){
+	EmpresaMarketing(String nombre, long telefono, double precioCampañaMarketing){
 		this.nombre=nombre;
 		this.telefono=telefono;
-		this.precioCampañaPelicula=precioCampañaPelicula;
+		this.precioCampañaMarketing=precioCampañaMarketing;
 	}
 
 	public String getNombre() {
@@ -27,11 +27,20 @@ public class EmpresaMarketing {
 		this.telefono = telefono;
 	}
 
-	public double getPrecioCampañaPelicula() {
-		return precioCampañaPelicula;
+	public double getPrecioCampañaMarketing() {
+		return precioCampañaMarketing;
 	}
 
-	public void setPrecioCampañaPelicula(double precioCampañaPelicula) {
-		this.precioCampañaPelicula = precioCampañaPelicula;
+	public void setPrecioCampañaMarketing(double precioCampañaMarketing) {
+		this.precioCampañaMarketing = precioCampañaMarketing;
 	}
+
+	@Override
+	public String toString() {
+		return "EmpresaMarketing [nombre=" + nombre + ", telefono=" + telefono + ", precioCampañaMarketing="
+				+ precioCampañaMarketing + ", getNombre()=" +getNombre() + ", getTelefono()=" + getTelefono()
+				+ ", getPrecioCampañaMarketing()=" + getPrecioCampañaMarketing() + "]";
+	}
+	
+	
 }

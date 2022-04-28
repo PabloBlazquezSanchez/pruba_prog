@@ -31,6 +31,7 @@ public class Netflix implements utils.Constantes {
 
 	public void crearPromocion() {
 		Contenido c;
+		Promocion p=null;
 		System.out.println("Escribe si la promoción es a través de redes sociales (s/n): ");
 		boolean redesSociales = leer.nextLine().toLowerCase().equals("s") ? true : false;
 		System.out.println("Escribe si la promoción es a través de un cartel (s/n): ");
@@ -41,11 +42,16 @@ public class Netflix implements utils.Constantes {
 		// Excepcion
 		try {
 			c = tituloExisteEnContenido(nombre);
-			Promocion p = new Promocion(promociones.size(), c, cartel, redesSociales);
-			promociones.add(p);
+			p = new Promocion(promociones.size(), c, cartel, redesSociales);
+			
+			//promociones.add(p);
 		} catch (ContenidoNoEncontradoException exc) {
 			System.out.println(exc.getMessage());
-		}
+			
+		}//catch (PrecioSuperiorException exc) {
+//			System.out.println(exc.getMessage());
+//		}
+		promociones.add(p);
 
 	}
 
@@ -113,15 +119,14 @@ public class Netflix implements utils.Constantes {
 	public void campañaMarketingMasiva() {
 		int contador=0;
 		double precio = 0;
+		EmpresaMarketing empresa = new EmpresaMarketing("Marketing UCLM", 925489031, Precio_Campaña_Marketing);
 		for (Contenido c : contenidos) {
 			if(c instanceof Pelicula) {
-				Promocion promoPeli = new Promocion(contador, c, false, true);
-				precio+=precioPromocion(promoPeli);
 				contador++;
 			}
 		}
-		precio += (contador*Precio_Campaña_Marketing);
-		System.out.println("El precio de la campaña de marketing masiva es de "+precio+"€");
+		precio += (contador*empresa.getPrecioCampañaMarketing());
+		System.out.println("El precio de la campaña de marketing masiva cuya empresa es"+empresa.toString()+" es de "+precio+" €");
 	}
 	public void calcularSubvenciones(String tipo) {
 		String tipo_serie ="serie";
