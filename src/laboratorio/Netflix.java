@@ -32,7 +32,7 @@ public class Netflix implements utils.Constantes {
 	public void crearPromocion() {
 		Contenido c;
 		System.out.println("Escribe si la promoción es a través de redes sociales (s/n): ");
-		boolean redesSociales = leer.nextLine().equals("s") ? true : false;
+		boolean redesSociales = leer.nextLine().toLowerCase().equals("s") ? true : false;
 		System.out.println("Escribe si la promoción es a través de un cartel (s/n): ");
 		boolean cartel = leer.nextLine().toLowerCase().equals("s") ? true : false;
 		System.out.println("Escribe el título de la serie o película de la que quieres crear promoción: ");
@@ -100,8 +100,8 @@ public class Netflix implements utils.Constantes {
 	public void calcularPreciounaPromocion(String titulo) {
 		boolean verificacion = true;
 		for (Promocion pr : promociones) {
-			if (pr.getContenido().getTitulo().equals(titulo)) {
-				System.out.println("El coste de la promoción de " + titulo + " es " + precioPromocion(pr) + "€");
+			if (pr.getContenido().getTitulo().toLowerCase().equals(titulo.toLowerCase())) {
+				System.out.println("El coste de la promoción de " + pr.getContenido().getTitulo() + " es " + precioPromocion(pr) + "€");
 				verificacion = false;
 			}
 			
@@ -149,12 +149,13 @@ public class Netflix implements utils.Constantes {
 	private Contenido tituloExisteEnContenido(String titulo) throws ContenidoNoEncontradoException {
 		Contenido contenido = null;
 		for (Contenido c : contenidos) {
-			if (c.getTitulo().equals(titulo)) {
+			if (c.getTitulo().toLowerCase().equals(titulo.toLowerCase())) {
 				contenido = c;
+				System.out.println("Promoción realizada correctamente.\n");
 			}
 		}
 		if (contenido == null) {
-			throw new ContenidoNoEncontradoException("Título de contenido no encontrado");
+			throw new ContenidoNoEncontradoException("Título de contenido no encontrado.\n");
 		}
 		return contenido;
 	}
