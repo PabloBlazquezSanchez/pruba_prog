@@ -11,29 +11,34 @@ public class Ayuntamiento {
 		this.subvencionMinCartel=subvencionMinCartel;
 	}
 	
-		public String getNombreContacto() {
-			return nombreContacto;
-		}
-
-		public void setNombreContacto(String nombreContacto) {
-			this.nombreContacto = nombreContacto;
-		}
-
-		public long getTelefono() {
-			return telefono;
-		}
-
-		public void setTelefono(long telefono) {
-			this.telefono = telefono;
-		}
-
-		public double getSubvencionMinCartel() {
-			return subvencionMinCartel;
-		}
-
-		public void setSubvencionMinCartel(double subvencionMinCartel) {
-			this.subvencionMinCartel = subvencionMinCartel;
-		
-
+	public String getNombreContacto() {
+		return nombreContacto;
 	}
+
+	public void setNombreContacto(String nombreContacto) {
+		this.nombreContacto = nombreContacto;
+	}
+
+	public long getTelefono() {
+		return telefono;
+	}
+
+	public void setTelefono(long telefono) {
+		this.telefono = telefono;
+	}
+
+	public double getSubvencionMinCartel() {
+		return subvencionMinCartel;
+	}
+
+	public void setSubvencionMinCartel(double subvencionMinCartel) {
+		this.subvencionMinCartel = subvencionMinCartel;
+	}
+
+	@Override
+	public String toString() {
+		return "Ayuntamiento [getNombreContacto()=" + getNombreContacto() + ", getTelefono()=" + getTelefono() + "]";
+	}
+	
+	
 }
