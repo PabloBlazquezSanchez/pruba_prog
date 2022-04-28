@@ -126,11 +126,12 @@ public class Netflix implements utils.Constantes {
 			}
 		}
 		precio += (contador*empresa.getPrecioCampañaMarketing());
-		System.out.println("El precio de la campaña de marketing masiva cuya empresa es"+empresa.toString()+" es de "+precio+" €");
+		System.out.println(empresa.toString()+" | Precio: "+precio +" €");
 	}
 	public void calcularSubvenciones(String tipo) {
 		String tipo_serie ="serie";
 		String tipo_pelicula ="pelicula";
+		Ayuntamiento ayto= new Ayuntamiento("Manolo Lama", 910263499, Subvencion_Pelicula_NTendencia);				
 		double precio = 0;
 		for(Promocion pr : promociones) {
 			if(tipo_pelicula.equals(tipo) && pr.getContenido() instanceof Pelicula && pr.isCartel()) {
@@ -148,7 +149,7 @@ public class Netflix implements utils.Constantes {
 				}
 			}
 		}
-		System.out.println("Las subvenciones totales que reciben del ayuntamiento son "+precio+"€");
+		System.out.println(ayto.toString()+" | Subvenciones recibidas del ayuntamiento: "+precio+" €");
 	}
 
 	private Contenido tituloExisteEnContenido(String titulo) throws ContenidoNoEncontradoException {

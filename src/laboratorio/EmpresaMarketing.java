@@ -37,7 +37,7 @@ public class EmpresaMarketing {
 
 	@Override
 	public String toString() {
-		return "Nombre de empresa: " + getNombre() + "| Teléfono:" + getTelefono();
+		return "Nombre de empresa: " + getNombre() + " | Teléfono:" + getTelefono();
 	}
 	
 	

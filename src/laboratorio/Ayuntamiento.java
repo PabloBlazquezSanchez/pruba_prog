@@ -37,7 +37,7 @@ public class Ayuntamiento {
 
 	@Override
 	public String toString() {
-		return "Ayuntamiento [getNombreContacto()=" + getNombreContacto() + ", getTelefono()=" + getTelefono() + "]";
+		return "Nombre del responsable del ayuntamiento: " + getNombreContacto() + " | Teléfono: " + getTelefono();
 	}
 	
 	
