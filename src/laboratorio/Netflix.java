@@ -150,7 +150,7 @@ public class Netflix implements utils.Constantes {
 			}
 		}
 		precio += (contador * empresa.getPrecioCampañaMarketing());
-		System.out.println(empresa.toString() + " | Precio: " + precio + " €");
+		System.out.println(empresa.toString() + " | Precio total de la campaña masiva: " + precio + " €");
 	}
 
 	public void calcularSubvenciones(String tipo) {
