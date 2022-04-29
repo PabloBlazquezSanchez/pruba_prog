@@ -1,18 +1,19 @@
 package laboratorio;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.FileNotFoundException;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Lectura {
 	static Netflix n = new Netflix();
 
-	public static void main(String[] args) throws IOException {
+	public static void main(String[] args) throws IOException, FileNotFoundException {
 		leerFichero2("Contenido.csv");
 		mostrarMenu();
-
 	}
 
 	public static void mostrarMenu() {
@@ -100,7 +101,7 @@ public class Lectura {
 		return numero;
 	}
 
-	private static void leerFichero2(String fichero) throws IOException {
+	private static void leerFichero2(String fichero) throws IOException, FileNotFoundException {
 		String titulo, descripcion, tipoContenido, productora, pais;
 		int año, duracion, nTemporadas, nCapitulos;
 		boolean tendencia;
@@ -131,6 +132,10 @@ public class Lectura {
 					n.addContenido(contenido);
 				}
 			}
+		} catch(FileNotFoundException e) {
+			System.out.println("El fichero no existe en el directorio de búsqueda.\n"
+					+ "El programa no puede continuar ejecutándose. Fin del Programa.");
+			System.exit(0);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

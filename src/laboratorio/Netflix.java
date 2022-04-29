@@ -51,8 +51,7 @@ public class Netflix implements utils.Constantes {
 			if (p.getContenido() instanceof Series) {
 				comprobarPrecioPromocion(p);
 			}
-			System.out
-					.println("Promoción realizada correctamente. ID asociado a esta promoción: " + promociones.size());
+			System.out.println("Promoción realizada correctamente. ID asociado a esta promoción: " + promociones.size());
 			promociones.add(p);
 		} catch (ContenidoNoEncontradoException exc) {
 			System.out.println(exc.getMessage());
@@ -196,8 +195,7 @@ public class Netflix implements utils.Constantes {
 		double precio = 0;
 		precio += precioPromocion(p);
 		if (precio > 12000) {
-			throw new PrecioSuperiorException(
-					"El precio de la promoción de esta serie supera los 12000 €, por lo que no se puede crear dicha promoción.");
+			throw new PrecioSuperiorException("El precio de la promoción de esta serie supera los 12000 €, por lo que no se puede crear dicha promoción.");
 		}
 	}
 
