@@ -12,7 +12,7 @@ import exceptions.ContenidoNoEncontradoException;
 import exceptions.PrecioSuperiorException;
 
 public class Netflix implements utils.Constantes {
-	private static Scanner leer = new Scanner(System.in);
+	private Scanner leer = new Scanner(System.in);
 	private List<Contenido> contenidos = new ArrayList<Contenido>();
 	private List<Promocion> promociones = new ArrayList<Promocion>();
 
@@ -63,7 +63,7 @@ public class Netflix implements utils.Constantes {
 
 	}
 
-	public static boolean filtraropciones(String opcion) {
+	public boolean filtraropciones(String opcion) {
 		boolean confirmacion = false;
 		if (opcion.toLowerCase().equals("s")) {
 			confirmacion = true;
