@@ -191,7 +191,6 @@ public class Netflix implements utils.Constantes {
 	}
 
 	private void comprobarPrecioPromocion(Promocion p) throws PrecioSuperiorException {
-		// TODO Auto-generated method stub
 		double precio = 0;
 		precio += precioPromocion(p);
 		if (precio > 12000) {

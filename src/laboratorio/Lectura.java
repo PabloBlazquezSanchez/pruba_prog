@@ -18,7 +18,6 @@ public class Lectura {
 
 	public static void mostrarMenu() {
 		int opcion = 0;
-		// TODO Auto-generated method stub
 		do {
 			System.out.println("Menú: \n" + "1. Mostrar toda la información del contenido de la plataforma.\n"
 					+ "2. Realizar una promoción de una película o una serie.\n"
