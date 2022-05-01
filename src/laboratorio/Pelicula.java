@@ -35,8 +35,6 @@ public class Pelicula extends Contenido {
 		this.productora = productora;
 	}
 
-	public double calcularPrecioPromocion() {
-		return 0;
-	}
+
 
 }

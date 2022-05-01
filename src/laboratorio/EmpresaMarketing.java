@@ -37,7 +37,7 @@ public class EmpresaMarketing {
 
 	@Override
 	public String toString() {
-		return "Nombre de empresa: " + getNombre() + " | Teléfono:" + getTelefono()+ " | Precio de la campaña por película: "+getPrecioCampañaMarketing();
+		return "La campaña masiva de marketing con la empresa "+ getNombre()+ " cuyo teléfono es el " + getTelefono()+ " es de " ;
 	}
 	
 	

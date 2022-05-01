@@ -198,8 +198,4 @@ public class Netflix implements utils.Constantes {
 			throw new PrecioSuperiorException("El precio de la promoción de esta serie supera los 12000 €, por lo que no se puede crear dicha promoción.");
 		}
 	}
-
-//	public void mostrarcosteTotalDePromociones() {
-//	}
-
 }

@@ -53,6 +53,4 @@ public abstract class Contenido {
 	public void setTendencias(boolean tendencias) {
 		this.tendencias = tendencias;
 	}
-	
-	public abstract double calcularPrecioPromocion();
 }

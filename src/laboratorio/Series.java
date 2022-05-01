@@ -10,11 +10,7 @@ public class Series extends Contenido {
 		this.capitulos = capitulos;
 	}
 
-	public double calcularPrecioPromocion() {
-		return 0;
-	}
 
-	@Override
 	public String toString() {
 		String Tendencias = (isTendencias()) ? "Sí" : "No";
 		return "Tipo de contenido: Serie | Temporadas: " + temporadas + " | Capítulos: " + capitulos + " | Título: "
