@@ -13,8 +13,8 @@ public class Series extends Contenido {
 	//Este método toString sirve para devolver una cadena de texto en la que se encuentra los Getters de las variables que queremos imprimir
 	public String toString() {
 		String Tendencias = (isTendencias()) ? "Sí" : "No";
-		return "Tipo de contenido: Serie | Temporadas: " + temporadas + " | Capítulos: " + capitulos + " | Título: "
-				+ getTitulo() + " | Fecha de estreno: " + getFechaestreno() + " | Duración: " + getDuracion()
+		return "Tipo de contenido: Serie | Título: " + getTitulo() + " | Capítulos: " + capitulos + " | Temporadas: "
+				+ temporadas + " | Fecha de estreno: " + getFechaestreno() + " | Duración: " + getDuracion()
 				+ " minutos | Sinopsis: " + getSinopsis() + " | Tendencias: " + Tendencias;
 	}
 	

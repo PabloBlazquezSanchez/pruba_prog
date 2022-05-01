@@ -131,8 +131,8 @@ public class Lectura {
 				}
 				// Informacion de una Pelicula
 				else {
-					productora = split[6];
-					pais = split[7];
+					productora = split[7];
+					pais = split[6];
 					contenido = new Pelicula(titulo, año, duracion, descripcion, tendencia, productora, pais);
 					n.addContenido(contenido);
 				}
