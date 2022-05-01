@@ -6,6 +6,7 @@ public abstract class Contenido {
 	private String sinopsis;
 	private boolean tendencias;
 	
+	//Constructor
 	public Contenido (String titulo, int fechaestreno, int duracion, String sinopsis, boolean tendencias) {
 		this.titulo=titulo;
 		this.fechaestreno=fechaestreno;
@@ -13,7 +14,8 @@ public abstract class Contenido {
 		this.sinopsis=sinopsis;
 		this.tendencias=tendencias;
 	}
-
+	
+	//Inicio Setters y Getters
 	public String getTitulo() {
 		return titulo;
 	}
@@ -53,4 +55,5 @@ public abstract class Contenido {
 	public void setTendencias(boolean tendencias) {
 		this.tendencias = tendencias;
 	}
+	//Fin Setters y Getters
 }
