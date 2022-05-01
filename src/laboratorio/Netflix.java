@@ -162,7 +162,7 @@ public class Netflix implements utils.Constantes { //Con este implements incluim
 			}
 		}
 		precio += (numPeliculas * empresa.getPrecioCampañaMarketing());
-		System.out.println(empresa.toString() + " | Precio total de la campaña masiva: " + precio + " euros.");
+		System.out.println(empresa.toString() + precio + " euros.");
 	}
 	
 	//Calcula la subvención obtenida del ayuntamiento por promocionar series o películas y lo muestra por pantalla
