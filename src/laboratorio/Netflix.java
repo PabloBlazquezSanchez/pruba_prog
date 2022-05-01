@@ -131,7 +131,7 @@ public class Netflix implements utils.Constantes { //Con este implements incluim
 		for (int i = 0; i < promociones.size(); i++) {
 			promocionestotales += precioPromocion(promociones.get(i));
 		}
-		System.out.println("El coste de todas las promociones es " + promocionestotales + "€");
+		System.out.println("El coste de todas las promociones es " + promocionestotales + " euros.");
 	}
 	
 	//Calcula el precio de una promoción y lo muestra por pantalla
@@ -140,7 +140,7 @@ public class Netflix implements utils.Constantes { //Con este implements incluim
 		for (Promocion pr : promociones) { //Recorre la variable promociones desde una variable pr
 			if (pr.getIdPromocion() == id) {
 				System.out.println("El coste de la promoción de " + pr.getContenido().getTitulo() + " es "
-						+ precioPromocion(pr) + "€");
+						+ precioPromocion(pr) + " euros.");
 				verificacion = false;
 			}
 
@@ -162,7 +162,7 @@ public class Netflix implements utils.Constantes { //Con este implements incluim
 			}
 		}
 		precio += (numPeliculas * empresa.getPrecioCampañaMarketing());
-		System.out.println(empresa.toString() + " | Precio total de la campaña masiva: " + precio + " €");
+		System.out.println(empresa.toString() + " | Precio total de la campaña masiva: " + precio + " euros.");
 	}
 	
 	//Calcula la subvención obtenida del ayuntamiento por promocionar series o películas y lo muestra por pantalla
@@ -189,7 +189,7 @@ public class Netflix implements utils.Constantes { //Con este implements incluim
 				}
 			}
 		}
-		System.out.println(ayto.toString() + " | Subvenciones recibidas del ayuntamiento: " + precio + " €");
+		System.out.println(ayto.toString() + " | Subvenciones recibidas del ayuntamiento: " + precio + " euros.");
 	}
 	
 	//Este método busca si el título introducido se encuentra en la variable contenido
@@ -213,7 +213,7 @@ public class Netflix implements utils.Constantes { //Con este implements incluim
 		precio += precioPromocion(p);
 		if (precio > 12000) {
 			//Si supera los 12000 € lanza la excepción y no se crea la promoción de esa serie
-			throw new PrecioSuperiorException("El precio de la promoción de esta serie supera los 12000 €, por lo que no se puede crear dicha promoción.");
+			throw new PrecioSuperiorException("El precio de la promoción de esta serie supera los 12000 euros, por lo que no se puede crear dicha promoción.");
 		}
 	}
 }
