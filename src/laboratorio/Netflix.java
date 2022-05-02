@@ -169,7 +169,7 @@ public class Netflix implements utils.Constantes { //Con este implements incluim
 	public void calcularSubvenciones(String tipo) {
 		String tipo_serie = "serie";
 		String tipo_pelicula = "pelicula";
-		Ayuntamiento ayto = new Ayuntamiento("Manolo Lama", 910263499, Subvencion_Pelicula_NTendencia);
+		Ayuntamiento ayto = new Ayuntamiento("José Durán", 910263499, Subvencion_Pelicula_NTendencia);
 		double precio = 0;
 		for (Promocion pr : promociones) { //Recorre la variable promociones desde una variable pr
 			//Si la promoción es de una película
