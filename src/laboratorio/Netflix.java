@@ -13,6 +13,7 @@ import exceptions.PrecioSuperiorException;
 
 public class Netflix implements utils.Constantes { //Con este implements incluimos las interfaces
 	private Scanner leer = new Scanner(System.in);
+	static boolean confirmacion = false;
 	private List<Contenido> contenidos = new ArrayList<Contenido>(); //Variable contenido de tipo Contenido
 	private List<Promocion> promociones = new ArrayList<Promocion>(); //Variable promociones de tipo Promocion
 	
@@ -69,7 +70,6 @@ public class Netflix implements utils.Constantes { //Con este implements incluim
 	
 	//Este método comprueba que la opción que se escribe es 's' o 'n'
 	public boolean filtraropciones(String opcion) {
-		boolean confirmacion = false;
 		if (opcion.toLowerCase().equals("s")) {
 			confirmacion = true;
 		} else if (opcion.toLowerCase().equals("n")) {
