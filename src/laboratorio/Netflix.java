@@ -173,7 +173,7 @@ public class Netflix implements utils.Constantes { //Con este implements incluim
 		double precio = 0;
 		for (Promocion pr : promociones) { //Recorre la variable promociones desde una variable pr
 			//Si la promoción es de una película
-			if (tipo_pelicula.equals(tipo) && pr.getContenido() instanceof Pelicula && pr.isCartel()) {
+			if (tipo_pelicula.equals(tipo.toLowerCase()) && pr.getContenido() instanceof Pelicula && pr.isCartel()) {
 				if (pr.getContenido().isTendencias()) {
 					precio += Subvencion_Pelicula_Tendencia;
 				} else {
@@ -181,7 +181,7 @@ public class Netflix implements utils.Constantes { //Con este implements incluim
 				}
 			}
 			//Si la promoción es de una serie
-			if (tipo_serie.equals(tipo) && pr.getContenido() instanceof Series && pr.isCartel()) {
+			if (tipo_serie.equals(tipo.toLowerCase()) && pr.getContenido() instanceof Series && pr.isCartel()) {
 				if (pr.getContenido().isTendencias()) {
 					precio += Subvencion_Serie_Tendencia;
 				} else {
